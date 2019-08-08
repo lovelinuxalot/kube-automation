@@ -1,0 +1,4 @@
+pod_network_cidr: 172.16.0.0/16
+calico_url: https://docs.projectcalico.org/v3.8/manifests/calico.yaml
+etcd_api_url: https://docs.projectcalico.org/v3.8/manifests/rbac/rbac-etcd-calico.yaml
+
