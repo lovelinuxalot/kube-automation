@@ -1,0 +1,1 @@
+patch_cmd: \'{"spec":{"template":{"spec":{"serviceAccount":"tiller"}}}}\'
