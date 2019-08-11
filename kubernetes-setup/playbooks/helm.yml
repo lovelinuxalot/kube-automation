@@ -1,0 +1,30 @@
+---
+- hosts: local
+  connection: local
+  become: true
+  gather_facts: false
+  tasks:
+#  - name: 'Create Service account'
+#    kube:
+#      action: 'create'
+#      resource: 'ServiceAccount'
+#      namespace: 'kube-system'
+#      name: 'tiller'
+#
+#  - name: 'Create Cluster RoleBinding'
+#    kube:
+#      action: 'create'
+#      resource: 'ClusterRoleBinding'
+#      name: 'tiller-cluster-rule'
+#      roleref: 'cluster-admin'
+#      assign_to: 'tiller'
+#      assign_kind: 'ServiceAccount'
+#      namespace: 'kube-system'
+
+  - name: 'Update the patch'
+    kube:
+      action: 'patch'
+      resource: 'Deployment'
+      namespace: 'kube-system'
+      name: 'tiller-deploy'
+      body: '{{ patch_cmd }}'
